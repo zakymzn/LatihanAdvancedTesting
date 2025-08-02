@@ -35,6 +35,9 @@ android {
     kotlinOptions {
         jvmTarget = "17"
     }
+    testOptions {
+        animationsDisabled = true
+    }
 }
 
 dependencies {
@@ -50,17 +53,13 @@ dependencies {
     implementation(libs.glide)
     implementation(libs.androidx.viewpager2)
     implementation(libs.androidx.fragment.ktx)
+//    implementation(libs.espresso.idling.resource)
 
     //testing
     testImplementation(libs.junit)
     testImplementation(libs.junit.junit)
-    testImplementation(libs.junit.junit)
     testImplementation(libs.mockito.core)
     testImplementation(libs.mockito.inline)
-    testImplementation(libs.junit.junit)
-    testImplementation(libs.junit.junit)
-    testImplementation(libs.junit.junit)
-    testImplementation(libs.junit.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
@@ -73,6 +72,10 @@ dependencies {
     androidTestImplementation(libs.androidx.core.testing)
     androidTestImplementation(libs.kotlinx.coroutines.test)
     androidTestImplementation(libs.kotlinx.coroutines.core)
+    androidTestImplementation(libs.androidx.test.services)
+
+    //TestCoroutineDispatcher
+    debugImplementation(libs.androidx.fragment.testing)
 
     //room
     implementation(libs.androidx.room.runtime)
@@ -90,4 +93,11 @@ dependencies {
 
     //desugaring
     coreLibraryDesugaring(libs.desugar.jdk.libs)
+
+    // mock web server
+    androidTestImplementation(libs.mockwebserver)
+    androidTestImplementation(libs.okhttp3.okhttp.tls)
+
+    androidTestImplementation(libs.espresso.contrib) //RecyclerViewActions
+    implementation(libs.androidx.espresso.idling.resource)
 }
