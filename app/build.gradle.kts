@@ -60,6 +60,7 @@ dependencies {
     testImplementation(libs.junit.junit)
     testImplementation(libs.mockito.core)
     testImplementation(libs.mockito.inline)
+    testImplementation(libs.junit.junit)
     androidTestImplementation(libs.androidx.junit)
     androidTestImplementation(libs.androidx.espresso.core)
 
@@ -100,4 +101,5 @@ dependencies {
 
     androidTestImplementation(libs.espresso.contrib) //RecyclerViewActions
     implementation(libs.androidx.espresso.idling.resource)
+    androidTestImplementation(libs.espresso.intents) //IntentsTestRule
 }
